@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>Product Analytics API Test</h1>
+    <button onclick="testSearchAPI()">Test Search API</button>
+    <button onclick="testAnalyticsAPI()">Test Analytics API</button>
+    <div id="results"></div>
+
+    <script>
+        async function testSearchAPI() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = 'Testing Search API...';
+            
+            try {
+                const response = await fetch('http://localhost:5165/api/ProductAnalytics/search-products', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        searchTerm: 'Sound',
+                        pageSize: 5,
+                        pageNumber: 1
+                    }),
+                });
+                
+                console.log('Response status:', response.status);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultsDiv.innerHTML = '<h3>Search API Success:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                } else {
+                    const errorText = await response.text();
+                    resultsDiv.innerHTML = '<h3>Search API Error:</h3><pre>' + errorText + '</pre>';
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = '<h3>Search API Network Error:</h3><pre>' + error.message + '</pre>';
+            }
+        }
+
+        async function testAnalyticsAPI() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = 'Testing Analytics API...';
+            
+            try {
+                const response = await fetch('http://localhost:5165/api/ProductAnalytics/sales-analytics', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        productId: 1,
+                        startYear: 2019,
+                        endYear: 2023
+                    }),
+                });
+                
+                console.log('Response status:', response.status);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultsDiv.innerHTML = '<h3>Analytics API Success:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                } else {
+                    const errorText = await response.text();
+                    resultsDiv.innerHTML = '<h3>Analytics API Error:</h3><pre>' + errorText + '</pre>';
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = '<h3>Analytics API Network Error:</h3><pre>' + error.message + '</pre>';
+            }
+        }
+    </script>
+</body>
+</html>

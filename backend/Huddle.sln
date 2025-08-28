@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huddle.API", "Huddle.API\Huddle.API.csproj", "{C1188EA0-9BE5-4B06-A8B0-104A2D3012DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huddle.Models", "Huddle.Models\Huddle.Models.csproj", "{D0964A8A-462C-8A0C-DB14-F0AA37F045E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huddle.Services", "Huddle.Services\Huddle.Services.csproj", "{98E34C83-416C-2068-842A-E4EAF1A49086}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C1188EA0-9BE5-4B06-A8B0-104A2D3012DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1188EA0-9BE5-4B06-A8B0-104A2D3012DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1188EA0-9BE5-4B06-A8B0-104A2D3012DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0964A8A-462C-8A0C-DB14-F0AA37F045E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0964A8A-462C-8A0C-DB14-F0AA37F045E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0964A8A-462C-8A0C-DB14-F0AA37F045E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0964A8A-462C-8A0C-DB14-F0AA37F045E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98E34C83-416C-2068-842A-E4EAF1A49086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E34C83-416C-2068-842A-E4EAF1A49086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E34C83-416C-2068-842A-E4EAF1A49086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E34C83-416C-2068-842A-E4EAF1A49086}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
